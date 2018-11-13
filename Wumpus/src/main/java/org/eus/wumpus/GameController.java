@@ -29,7 +29,8 @@ public class GameController {
 		view = new View ();
 		gameStatus = GameStatus.SEARCHING_GOLD;
 		
-		this.numberOfRows = this.numberOfColumns = PropertiesHelper.getInstance().getNumberOfRows();
+		this.numberOfRows = PropertiesHelper.getInstance().getNumberOfRows();
+		this.numberOfColumns = PropertiesHelper.getInstance().getNumberOfColumns();
 		this.numberOfHoles = PropertiesHelper.getInstance().getNumberOfHoles();
 		this.numberOfArrows = PropertiesHelper.getInstance().getNumberOfArrows();
 		
@@ -102,10 +103,10 @@ public class GameController {
 	
 	private void throwArrow () {
 		ActionType actionType = board.getMainCharacter().throwArrow();
-		if (actionType == ActionType.ACTION_NOT_ALLOWED) {
-			view.printValue("There are no arrows");
-		} else {
+		if (actionType != ActionType.ACTION_NOT_ALLOWED) {
 			updateStatus(ActionType.THROUGH_ARROW);
+		} else {
+			view.printValue("There are no arrows");
 		}
 	} 
 	
@@ -125,9 +126,7 @@ public class GameController {
 	}
 	
 	private void walk() {
-		if (board.isMovementAllowed() == ActionType.ACTION_NOT_ALLOWED) {
-			view.printValue("Ooops, you can not walk in this direction");
-		} else {
+		if (board.isMovementAllowed() != ActionType.ACTION_NOT_ALLOWED) {
 			board.getMainCharacter().walk();
 			
 			updateStatus(ActionType.WALK);
@@ -142,6 +141,9 @@ public class GameController {
 				gameStatus = GameStatus.WIN;
 				view.printValue("Congratulations You Win!!!");
 			}
+			
+		} else {
+			view.printValue("Ooops, you can not walk in this direction");
 		}
 	}
 }

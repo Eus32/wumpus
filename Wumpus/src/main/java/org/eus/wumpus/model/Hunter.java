@@ -40,7 +40,6 @@ public class Hunter implements MainCharacter{
 			this.position.setPositionY(this.position.getPositionY() + 1);
 			break;
 		}
-		System.out.println("Position: " + position.getPositionX() + "," + position.getPositionY());	
 		return ActionType.ACTION_ALLOWED;
 	}
 	

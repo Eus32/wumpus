@@ -17,6 +17,8 @@ public class App
     	
     	GameController gameController = new GameController();
     	gameController.startGame();
+    	
+    	logger.debug("Game Over!!!");
     }
     
     
