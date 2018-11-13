@@ -1,0 +1,7 @@
+Wumpus/.classpath
+Wumpus/.project
+Wumpus/.settings/*
+Wumpus/target/*
+/target/
+/.classpath
+/.project

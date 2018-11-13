@@ -30,7 +30,7 @@ public class View {
 		System.out.println(value);
 	}
 	
-	public ActionType getValue() {
+	public ActionType getSelectedOption() {
 		try {
 			int action = 0;
 			

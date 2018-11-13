@@ -49,7 +49,7 @@ public class GameController {
 				gameStatus != GameStatus.WIN &&
 				gameStatus != GameStatus.FINISHED) {
 			
-			ActionType action = view.getValue();
+			ActionType action = view.getSelectedOption();
 			
 			switch(action) {
 			case EXIT_GAME:
