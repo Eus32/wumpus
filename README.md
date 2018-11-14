@@ -8,3 +8,12 @@ Please fork this repo in your account and develop a Java program that implements
 Bonus points for unit tests ;).
 
 Please use Eclipse as your IDE and whatever version of Java you are most confortable with (Scala or Groovy also welcomed). Use whatever framework you prefer for your unit tests.
+
+To run the application execute:
+1. mvn clean install -> To compile and generate the jar file.
+2. to execute the application java -jar Wumpus-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+Dependencies:
+1. Java 8
+2. Maven
+ 
